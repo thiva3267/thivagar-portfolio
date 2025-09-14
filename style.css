@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    background-color: #1a1a2e;
+    color: #cccccc;
+    font-family: 'Roboto', sans-serif; /* Changed font for a modern look */
+    line-height: 1.6;
+    padding: 0px; /* Add horizontal padding to the body */
+}
+
+h1, h2 {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif; /* Changed font for headings */
+    text-align: center;
+}
+
+/* Header Styling */
+.resume-header {
+    background-color: #0d0d1a; /* Darker background for header */
+    color: gold;
+    position: relative; /* Changed from fixed to relative to allow natural flow */
+    padding: 20px;
+    border-bottom: 2px solid #d4af37;
+    display: flex; /* Use flexbox for header layout */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items initially */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between header elements */
+    margin-bottom: 40px; /* Space below header */
+    text-align: center; /* Center text within header elements */
+}
+
+.header-main {
+    flex: 1; /* Allows this div to take available space */
+    min-width: 250px; /* Ensure it doesn't get too small */
+}
+
+.resume-header h1 {
+    font-size: 3.5em; /* Larger font for main name */
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+.job-title {
+    font-size: 1.2em;
+    margin-top: 0;
+    color: #d4af37;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px; /* Adjusted size */
+    height: 150px; /* Adjusted size */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid gold; /* Add a border to the image */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Glow effect */
+}
+
+.contact-info {
+    font-size: 0.95em;
+    flex-basis: 100%; /* Make contact info take full width below name/image */
+    margin-top: 15px; /* Space from above elements */
+    color: #e0e0e0;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    display: inline-block; /* Display items in a row where possible */
+    margin-right: 20px; /* Space between contact items */
+}
+
+.contact-info a {
+    color: #87ceeb; /* Lighter blue for links */
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.contact-info a:hover {
+    color: #4682b4; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+.contact-info span { /* For phone and location, similar styling to links */
+    font-style: normal;
+    color: #87ceeb;
+}
+
+/* Main Content Layout */
+.resume-main {
+    display: grid; /* Use CSS Grid for a clean, responsive layout */
+    grid-template-columns: 1fr; /* Default to single column */
+    gap: 30px; /* Space between sections */
+    max-width: 1000px; /* Max width for content */
+    margin: 0 auto 50px auto; /* Center main content and add bottom margin */
+    padding: 20px; /* Inner padding for the main content area */
+    box-sizing: border-box; /* Include padding in element's total width */
+}
+
+section {
+    background-color: #2a2a4a; /* Darker background for sections */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners for sections */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    text-align: justify; /* Justify text for professional look */
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    text-align: left; /* Align section titles to the left */
+}
+
+section ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px; /* Space for custom bullet */
+    position: relative;
+}
+
+section ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: gold;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Footer Styling */
+.resume-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #0d0d1a;
+    border-top: 1px solid #d4af37;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .resume-main {
+        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+    }
+
+    /* Adjust specific section placements for two-column layout */
+    .about-me {
+        grid-column: 1 / -1; /* Make 'Who I Am' span full width */
+    }
+
+    .resume-header {
+        justify-content: space-between; /* Space out items on larger screens */
+        text-align: left; /* Align header content to left */
+    }
+
+    .header-main {
+        text-align: left;
+    }
+
+    .contact-info {
+        flex-basis: auto; /* Revert to auto width */
+        margin-top: 0;
+        text-align: right; /* Align contact info to the right */
+    }
+}
+
+@media (min-width: 1024px) {
+    .resume-main {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on very large screens if desired */
+    }
+
+    .about-me {
+        grid-column: 1 / -1; /* Keep 'Who I Am' spanning full width */
+    }
+    /* You might adjust other sections to span differently here if you want more complex layouts */
+}
+
+/* Basic hover effects for professionalism */
+section:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
